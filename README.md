@@ -10,6 +10,11 @@
 - **可视化交互**：提供交互式 Web 界面，实时查看参数变化。
 - **可视化图表**：支持 3D 晶体切向示意图和折射率椭球绘制。
 
+**演示图**
+<img width="1575" height="551" alt="c58a075d9f84e946291da21ede2ad2a9" src="https://github.com/user-attachments/assets/9301460a-6002-4135-83ce-c7ed678033fb" />
+<img width="1136" height="806" alt="72229e5361e2c001dd6982fab563309a" src="https://github.com/user-attachments/assets/5a8c314a-f220-4ebb-9b62-8f72d62df564" />
+<img width="1508" height="772" alt="4d6cdd610d6a0779d14132aa54a7d5d5" src="https://github.com/user-attachments/assets/5a721261-3119-4d04-932f-c9eccc8c3d71" />
+
 ## 安装与运行 (Installation & Usage)
 
 1. **克隆仓库**
