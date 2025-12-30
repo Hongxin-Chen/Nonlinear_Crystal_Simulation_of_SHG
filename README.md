@@ -30,7 +30,7 @@ This is an optical simulation tool developed using **Python** and **Streamlit**.
 
 ## Demo
 <img width="1942" height="761" alt="image" src="https://github.com/user-attachments/assets/9aa36358-daf4-4f6e-b337-79a3378dbba9" />
-<img width="1136" height="806" alt="3D Crystal Visualization" src="https://github.com/user-attachments/assets/5a8c314a-f220-4ebb-9b62-8f72d62df564" />
+<img width="1370" height="911" alt="image" src="https://github.com/user-attachments/assets/935ee456-5ed0-40ae-994e-2962b8b17c7b" />
 <img width="1602" height="851" alt="image" src="https://github.com/user-attachments/assets/db562468-bf57-4e8a-a86b-7a42279e0245" />
 
 
