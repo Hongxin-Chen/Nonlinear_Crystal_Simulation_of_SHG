@@ -1,6 +1,6 @@
 # Nonlinear Crystal SHG Calculator v2.0
 
-## 🚀 v2.0 Release Notes / 更新日志
+## 🚀 v2.0 Release Notes
 We are excited to announce **v2.0**! This update extends our simulation capabilities to Sum Frequency Generation and introduces temperature tuning mechanics.
 
 -   **SFG Support**: Now supports nonlinear parameter calculations for Sum Frequency Generation (SFG).
