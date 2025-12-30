@@ -1,22 +1,11 @@
 # Nonlinear Crystal SHG Calculator v2.0
 
 ## 🚀 v2.0 Release Notes / 更新日志
-
-**[English]**
 We are excited to announce **v2.0**! This update extends our simulation capabilities to Sum Frequency Generation and introduces temperature tuning mechanics.
 
 -   **SFG Support**: Now supports nonlinear parameter calculations for Sum Frequency Generation (SFG).
 -   **Temperature Matching**: Added a new module for Temperature Phase Matching (TPM).
 -   **Enhanced Sellmeier Library**: Users can now select Sellmeier equations from different references. We will continue to expand this database in future updates.
-
-**[中文]**
-我们很高兴发布 **v2.0**！本次更新扩展了对和频过程的支持，并引入了温度调谐机制。
-
--   **支持和频 (SFG)**：现已支持和频产生过程的非线性参数计算。
--   **温度匹配模块**：新增温度相位匹配（TPM）计算功能。
--   **完善的方程库**：支持选择不同来源的 Sellmeier 方程。未来我们将持续扩充晶体参数数据库。
-
-
 
 ## Introduction
 This is an optical simulation tool developed using **Python** and **Streamlit**. It is designed to calculate critical parameters for frequency shifthing processes in common nonlinear crystals, such as BBO, LBO, CLBO, and KDP.
