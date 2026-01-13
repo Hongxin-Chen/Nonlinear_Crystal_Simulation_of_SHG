@@ -86,20 +86,39 @@ class SimulationConfig:
     
     def _get_indices_clbo_oxide(self, wavelength, dtemp):
         """CLBO的OXIDE来源方程（原默认方程）"""
-        n_x = np.sqrt(2.2145 + 0.00890 / (wavelength**2 - 0.02051) - 0.01413 * wavelength**2) - 1.9e-6 * dtemp
-        n_y = n_x
-        n_z = np.sqrt(2.0588 + 0.00866 / (wavelength**2 - 0.01202) - 0.00607 * wavelength**2) - 0.5e-6 * dtemp
+        # 计算基础折射率（在20°C参考温度下）
+        n_o = np.sqrt(2.2145 + 0.00890 / (wavelength**2 - 0.02051) - 0.01413 * wavelength**2)
+        n_e = np.sqrt(2.0588 + 0.00866 / (wavelength**2 - 0.01202) - 0.00607 * wavelength**2)
+        
+        # 计算温度相关的折射率变化（λ单位为μm）
+        # dn_o/dT = (-1.04λ² + 0.35λ - 12.91) × 10⁻⁶ (°C⁻¹)
+        # dn_e/dT = (3.31λ² - 2.43λ - 8.40) × 10⁻⁶ (°C⁻¹)
+        dn_o_dT = (-1.04 * wavelength**2 + 0.35 * wavelength - 12.91) * 1e-6
+        dn_e_dT = (3.31 * wavelength**2 - 2.43 * wavelength - 8.40) * 1e-6
+        
+        # 应用温度修正
+        n_x = n_o + dn_o_dT * dtemp
+        n_y = n_o + dn_o_dT * dtemp
+        n_z = n_e + dn_e_dT * dtemp
+        
         return {"n_x": n_x, "n_y": n_y, "n_z": n_z}
     
     def _get_indices_clbo_fujing(self, wavelength, dtemp):
         """CLBO的福晶来源方程"""
+        # 计算基础折射率（在20°C参考温度下）
         n_o = np.sqrt(2.2104 + 0.01018 / (wavelength**2 - 0.01424) - 0.01258 * wavelength**2)
         n_e = np.sqrt(2.0588 + 0.00838 / (wavelength**2 - 0.01363) - 0.00607 * wavelength**2)
+        
+        # 计算温度相关的折射率变化（λ单位为μm，有效范围 0.2128~1.3382 μm）
+        # dn_o/dT = (-12.48 - 0.328/λ) × 10^-6 (°C^-1)
+        # dn_e/dT = (-8.36 + 0.047/λ - 0.039/λ² + 0.014/λ³) × 10^-6 (°C^-1)
+        dn_o_dT = (-12.48 - 0.328 / wavelength) * 1e-6
+        dn_e_dT = (-8.36 + 0.047 / wavelength - 0.039 / wavelength**2 + 0.014 / wavelength**3) * 1e-6
+        
         # CLBO是单轴晶体，no对应x和y，ne对应z
-        # 温度系数暂用OXIDE的值（福晶未提供）
-        n_x = n_o - 1.9e-6 * dtemp
-        n_y = n_o - 1.9e-6 * dtemp
-        n_z = n_e - 0.5e-6 * dtemp
+        n_x = n_o + dn_o_dT * dtemp
+        n_y = n_o + dn_o_dT * dtemp
+        n_z = n_e + dn_e_dT * dtemp
         return {"n_x": n_x, "n_y": n_y, "n_z": n_z}
     
     def _get_indices_lbo_thorlabs(self, wavelength, dtemp):
