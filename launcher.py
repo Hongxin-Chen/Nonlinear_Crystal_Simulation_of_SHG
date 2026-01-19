@@ -130,8 +130,8 @@ dn_e/dT = (-8.36 + 0.047/λ - 0.039/λ² + 0.014/λ³) × 10⁻⁶ (°C⁻¹)
 (λ单位：μm, 适用范围：0.2128-1.3382 μm，参考温度：20°C)
 
 参考文献：
-Umemura, N., et al. "New data on the phase-matching properties of CsLiB6O10." 
-Advanced Solid State Lasers. Optica Publishing Group, 1999.""",
+Umemura, N., et al. "New data on the phase-matching properties of CsLiB6O10." Advanced Solid State Lasers. Optica Publishing Group, 1999.""",
+        
         'OXIDE': """CLBO (单轴晶体, n_o = n_x = n_y, n_e = n_z) - OXIDE
 
 n_o² = 2.2145 + 0.00890/(λ² - 0.02051) - 0.01413λ²
@@ -145,8 +145,8 @@ dn_e/dT = (3.31λ² - 2.43λ - 8.40) × 10⁻⁶ (°C⁻¹)
 (λ单位：μm)
 
 参考文献：
-Nobuhiro Umemura and Kiyoshi Kato, "Ultraviolet generation tunable to 0.185 µm 
-in CsLiB6O10," Appl. Opt. 36, 6794-6796 (1997)"""
+Nobuhiro Umemura and Kiyoshi Kato, "Ultraviolet generation tunable to 0.185 µm in CsLiB6O10," Appl. Opt. 36, 6794-6796 (1997)"""
+    },
     },
     
     'KTP': {
@@ -1936,4 +1936,5 @@ if st.session_state.has_run:
                             st.metric(f"{plane}平面角度带宽", 
                                     f"{acc_ang:.4f} mrad·cm" if not np.isnan(acc_ang) else "N/A")
                             st.caption(f"约 {acc_ang_deg:.4f}°·cm" if not np.isnan(acc_ang_deg) else "")
+
 
